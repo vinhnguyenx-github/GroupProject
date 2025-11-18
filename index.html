@@ -94,24 +94,6 @@
         });
       });
 
-      // Enlarge Image Function (for destination pages)
-      function enlargeImage(img) {
-        img.classList.toggle("enlarged");
-      }
-
-      // Read More Function (for destination pages)
-      function readMore(button) {
-        const content = button.previousElementSibling;
-        if (content.style.display === "none" || content.style.display === "") {
-          content.style.display = "block";
-          button.textContent = "Read Less";
-          alert("Showing additional content!");
-        } else {
-          content.style.display = "none";
-          button.textContent = "Read More";
-        }
-      }
-
       // Contact Form Submit (for contact page)
       function submitForm(event) {
         event.preventDefault();
