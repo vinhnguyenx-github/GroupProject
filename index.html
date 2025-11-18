@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <h2>Sidebar</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-submenu">
+          <a href="#" onclick="toggleSubmenu(event)">Destinations</a>
+          <ul class="submenu" id="destinationSubmenu">
+            <li><a href="vietnam.html">Vietnam</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content - HOME PAGE -->
+    <div class="main-content">
+      <!-- Hero Section with Background Image -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1>Vinh - Ethan</h1>
+          <p>Explore the world with us!</p>
+          <a href="contact.html" class="contact-link">Contact Us</a>
+        </div>
+      </section>
+
+      <!-- Five Destination Boxes Section -->
+      <section class="destinations-section">
+        <h2>Popular Destinations</h2>
+        <div class="destinations-grid">
+          <!-- Destination 1: Vietnam -->
+          <div class="destination-card">
+            <img src="images/vietnam_preview.jpeg" alt="Vietnam" />
+            <div class="destination-info">
+              <h3>Vietnam</h3>
+              <p>
+                Explore vibrant cities, diverse landscapes, and rich cultural
+                traditions across Vietnam.
+              </p>
+              <button class="show-more-btn">Show More Info</button>
+              <div class="more-info">
+                <p><strong>Best Time to Visit:</strong> November to April</p>
+                <p>
+                  <strong>Must-Try Food:</strong> Pho, Bun Cha, Bun Rieu, Chao
+                  Suon
+                </p>
+                <p>
+                  <strong>Top Activities:</strong> Ha Long Bay cruise, exploring
+                  Hoi An Ancient Town, street food tours in Hanoi and Ho Chi
+                  Minh City
+                </p>
+                <p>
+                  <strong>Transportation:</strong> Domestic flights, trains,
+                  buses, motorbikes
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Destination 2: ... -->
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // Toggle Submenu in Sidebar
+      function toggleSubmenu(event) {
+        event.preventDefault();
+        const submenu = document.getElementById("destinationSubmenu");
+        submenu.style.display =
+          submenu.style.display === "block" ? "none" : "block";
+      }
+
+      // jQuery Show/Hide More Info for Destination Cards
+      $(document).ready(function () {
+        $(".show-more-btn").click(function () {
+          $(this).siblings(".more-info").slideToggle(400);
+
+          if ($(this).text() === "Show More Info") {
+            $(this).text("Show Less Info");
+          } else {
+            $(this).text("Show More Info");
+          }
+        });
+      });
+
+      // Enlarge Image Function (for destination pages)
+      function enlargeImage(img) {
+        img.classList.toggle("enlarged");
+      }
+
+      // Read More Function (for destination pages)
+      function readMore(button) {
+        const content = button.previousElementSibling;
+        if (content.style.display === "none" || content.style.display === "") {
+          content.style.display = "block";
+          button.textContent = "Read Less";
+          alert("Showing additional content!");
+        } else {
+          content.style.display = "none";
+          button.textContent = "Read More";
+        }
+      }
+
+      // Contact Form Submit (for contact page)
+      function submitForm(event) {
+        event.preventDefault();
+        alert("You just submit contacting form");
+        event.target.reset();
+      }
+    </script>
+  </body>
+</html>
