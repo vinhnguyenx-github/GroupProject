@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>South Korea</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <h2>Sidebar</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li class="has-submenu">
+          <a href="#" onclick="toggleSubmenu(event)">Destinations</a>
+          <ul class="submenu" id="destinationSubmenu">
+            <li><a href="korea.html">South Korea</a></li>
+            <li><a href="seoul.html">Seoul</a></li>
+            <li><a href="busan.html">Busan</a></li>
+            <li><a href="jeju.html">Jeju Island</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <section class="destination-page">
+        <div class="destination-content">
+          <h1>South Korea – Culture, Food & Technology</h1>
+
+          <div class="destination-image-container">
+            <img
+              src="images/korea_preview.jpeg"
+              alt="South Korea"
+              class="destination-image"
+              onclick="enlargeImage(this)"
+            />
+            <p
+              style="
+                text-align: center;
+                color: #888;
+                margin-top: 10px;
+                font-size: 14px;
+              "
+            >
+              Click image to enlarge
+            </p>
+          </div>
+
+          <h2>About South Korea</h2>
+          <p>
+            South Korea is a vibrant country known for its unique blend of
+            ancient culture, modern architecture, stunning landscapes, and
+            world-famous pop culture. From traditional palaces to high-tech
+            districts, the country offers a wide variety of experiences for
+            travelers.
+          </p>
+          <p>
+            With dynamic cities like Seoul and Busan, scenic coastal areas, and
+            natural wonders like Jeju Island, South Korea has become one of
+            Asia’s top travel destinations.
+          </p>
+
+          <h2>Food & Cuisine</h2>
+          <p>
+            Korean cuisine is all about bold flavors, fermented ingredients, and
+            shared meals. Signature dishes include kimchi, bibimbap, bulgogi,
+            Korean BBQ, tteokbokki, and Korean fried chicken.
+          </p>
+          <p>
+            Night markets and street vendors are a huge part of the food
+            culture, offering treats like hotteok, fish cakes, and spicy
+            skewers. Every region has its own specialties.
+          </p>
+
+          <div class="read-more-content">
+            <h2>Things to Do</h2>
+
+            <p>
+              <strong>Nature & Scenery:</strong> Hike Seoraksan National Park,
+              explore Jeju Island’s volcanic landscapes, and enjoy spring cherry
+              blossoms across the country.
+            </p>
+
+            <p>
+              <strong>Cities:</strong> Explore Seoul’s palaces and districts,
+              relax on Busan’s beaches and visit its temples, or enjoy Jeju’s
+              beaches, caves, and waterfalls.
+            </p>
+
+            <p>
+              <strong>Culture & History:</strong> Visit Gyeongbokgung Palace,
+              wander through Bukchon Hanok Village, and explore traditional
+              markets like Gwangjang.
+            </p>
+
+            <p>
+              <strong>Modern Attractions:</strong> Dive into K-Pop culture,
+              themed cafés, gaming arcades, COEX Mall, and Korea’s tech-driven
+              urban areas.
+            </p>
+          </div>
+
+          <button class="read-more-btn" onclick="readMore(this)">
+            Read More
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function toggleSubmenu(event) {
+        event.preventDefault();
+        const submenu = document.getElementById("destinationSubmenu");
+        submenu.style.display =
+          submenu.style.display === "block" ? "none" : "block";
+      }
+
+      function enlargeImage(img) {
+        img.classList.toggle("enlarged");
+      }
+
+      function readMore(button) {
+        const content = button.previousElementSibling;
+        if (content.style.display === "none" || content.style.display === "") {
+          content.style.display = "block";
+          button.textContent = "Read Less";
+          alert("You click on Read More button");
+        } else {
+          content.style.display = "none";
+          button.textContent = "Read More";
+        }
+      }
+    </script>
+  </body>
+</html>
