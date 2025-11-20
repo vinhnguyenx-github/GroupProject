@@ -97,7 +97,7 @@ img {
 /* ===== HOME PAGE - HERO SECTION ===== */
 .hero-section {
   height: 100vh;
-  background: url("../images/background.webp");
+  background: url("/images/background.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
