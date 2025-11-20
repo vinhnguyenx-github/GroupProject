@@ -405,3 +405,60 @@ img {
   color: black;
   transform: scale(1.05);
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 42px;
+  }
+  .hero-content p {
+    font-size: 18px;
+    max-width: 600px;
+  }
+  .destinations-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+  .main-content {
+    margin-left: 200px;
+  }
+  .hero-content h1 {
+    font-size: 36px;
+  }
+  .hero-content p {
+    font-size: 16px;
+  }
+  .destination-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  .hero-section {
+    height: 80vh;
+    background-attachment: scroll;
+  }
+  .hero-content h1 {
+    font-size: 30px;
+  }
+  .hero-content p {
+    font-size: 15px;
+  }
+  .destinations-section {
+    padding: 60px 20px;
+  }
+}
