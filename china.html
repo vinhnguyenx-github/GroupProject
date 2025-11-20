@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>China</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav class="sidebar">
+      <h2>Sidebar</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-submenu">
+          <a href="#" onclick="toggleSubmenu(event)">Destinations</a>
+          <ul class="submenu" id="destinationSubmenu">
+            <li><a href="vietnam.html">Vietnam</a></li>
+            <li><a href="korea.html">Korea</a></li>
+            <li><a href="japan.html">Japan</a></li>
+            <li><a href="singapore.html">Singapore</a></li>
+            <li><a href="china.html">China</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <section class="destination-page">
+        <div class="destination-content">
+          <h1>China</h1>
+
+          <div class="destination-image-container">
+            <img
+              src="images/china_preview.jpg"
+              alt="China"
+              class="destination-image"
+              onclick="enlargeImage(this)"
+            />
+            <p
+              style="
+                text-align: center;
+                color: #888;
+                margin-top: 10px;
+                font-size: 14px;
+              "
+            >
+              Click image to enlarge
+            </p>
+          </div>
+
+          <h2>About China</h2>
+          <p>
+            China offers a mix of ancient history and modern city life. Visitors
+            see old temples, historic walls, and fast growing cities.
+          </p>
+          <p>
+            The country covers mountains, deserts, rivers, and coastlines. Major
+            cities such as Beijing, Shanghai, and Xi'an are popular for travel.
+          </p>
+
+          <h2>Food &amp; Cuisine</h2>
+          <p>
+            Chinese food has many regional styles. Well known dishes include
+            dumplings, Peking duck, hotpot, fried rice, and noodles.
+          </p>
+          <p>
+            Flavors range from mild to very spicy. Travelers visit local
+            restaurants and street stalls to try different dishes.
+          </p>
+
+          <div class="read-more-content">
+            <h2>Things to Do</h2>
+            <p>
+              <strong>Historical Sites:</strong> Walk on the Great Wall, visit
+              the Forbidden City, and see the Terracotta Army.
+            </p>
+            <p>
+              <strong>Cities:</strong> Explore Shanghai's skyline, Beijing's old
+              streets, and modern business areas.
+            </p>
+            <p>
+              <strong>Nature:</strong> Visit Zhangjiajie, Guilin's karst
+              mountains, and the Yellow Mountains.
+            </p>
+            <p>
+              <strong>Experiences:</strong> Ride high speed trains, join local
+              markets, and enjoy traditional festivals.
+            </p>
+          </div>
+
+          <button class="read-more-btn" onclick="readMore(this)">
+            Read More
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function toggleSubmenu(event) {
+        event.preventDefault();
+        const submenu = document.getElementById("destinationSubmenu");
+        submenu.style.display =
+          submenu.style.display === "block" ? "none" : "block";
+      }
+
+      function enlargeImage(img) {
+        img.classList.toggle("enlarged");
+      }
+
+      function readMore(button) {
+        const content = button.previousElementSibling;
+        if (content.style.display === "none" || content.style.display === "") {
+          content.style.display = "block";
+          button.textContent = "Read Less";
+          alert("You click on Read More button");
+        } else {
+          content.style.display = "none";
+          button.textContent = "Read More";
+        }
+      }
+    </script>
+  </body>
+</html>
